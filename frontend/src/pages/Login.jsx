@@ -26,10 +26,15 @@ const StyledLoginButton = styled.a`
 	}
 `;
 
+const LOGIN_URI =
+  process.env.NODE_ENV !== 'production'
+    ? 'http://localhost:3000/login'
+    : 'https://spotify-profile-t6d7.onrender.com/login';
+
 const Login = () => {
 	return (
 		<StyledLoginContainer>
-			<StyledLoginButton href='http://localhost:3000/login'>
+			<StyledLoginButton href={LOGIN_URI}>
 				Continue with Spotify
 			</StyledLoginButton>
 		</StyledLoginContainer>
